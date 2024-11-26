@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AgainMaui.Pages.AddTaskPage"
+             Title="AddTaskPage">
+    <ScrollView>
+        <Grid RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto" ColumnDefinitions="*,2*">
+
+            <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Text="Add Task" 
+                   FontSize="Title" 
+                   HorizontalOptions="Center"
+                   TextColor="Black"/>
+
+            </Frame>
+            <Label Text="Title" FontSize="Medium" Grid.Row="1" Grid.Column="0"/>
+            <Entry Placeholder="Enter title" x:Name="TitleEntry"
+                   Keyboard="Text"  PlaceholderColor="Black"
+                   Grid.Row="1" Grid.Column="1"/>
+            <Label Text="Due Date" FontSize="Medium" Grid.Row="2" Grid.Column="0"/>
+            <DatePicker x:Name="dpDueDate" Grid.Row="2" Grid.Column="1" />
+            <Label Text="Due Time" FontSize="Medium" Grid.Row="3" Grid.Column="0"/>
+            <TimePicker x:Name="tpDueTime" Grid.Row="3" Grid.Column="1" />
+            <Label Text="Priority" FontSize="Medium" Grid.Row="4" Grid.Column="0"/>
+            <Switch x:Name="switchPriority" IsToggled="False" Grid.Row="4" Grid.Column="1" />
+            <Label Text="Creation Date" FontSize="Medium" Grid.Row="5" Grid.Column="0"/>
+            <DatePicker x:Name="dpCurrDate" Grid.Row="5" Grid.Column="1" IsEnabled="False"/>
+            <Label Text="Creation Time" FontSize="Medium" Grid.Row="6" Grid.Column="0"/>
+            <TimePicker x:Name="tpCurrTime" Grid.Row="6" Grid.Column="1" IsEnabled="False"/>
+            <Button Text="Add" x:Name="btnAdd" Clicked="btnAdd_Clicked" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"/>
+        </Grid>
+    </ScrollView>
+</ContentPage>

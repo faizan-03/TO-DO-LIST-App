@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AgainMaui.Pages.ViewUsersPage"
+             Title="ViewUsersPage">
+    <ListView x:Name="UsersListView">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <HorizontalStackLayout>
+                        <Label Text="{Binding UserName}" 
+                               TextColor="Black" 
+                               BackgroundColor="Blue" 
+                               HorizontalOptions="Center" 
+                               Margin="10" 
+                               Padding="5"/>
+                    </HorizontalStackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AgainMaui.Pages.SignUpPage"
+             Title="SignUpPage">
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,auto,auto,auto"
+      ColumnDefinitions="*,2*">
+        <Label Text="Sign Up"
+           FontSize="Title"
+           Grid.Column="0"
+           Grid.Row="0" Grid.ColumnSpan="2" 
+           HorizontalOptions="Center"
+           TextColor="black"/>
+        <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+             Margin="0,0,0,20"
+             HeightRequest="1"/>
+        <Label Text="Name"
+           FontSize="Medium"
+           Grid.Row="2" Grid.Column="0"/>
+        <Entry x:Name="nameTxt"
+           Grid.Row="2" Grid.Column="1" 
+           FontSize="Medium" />
+        <Label Text="Pin"
+           FontSize="Medium"
+           Grid.Row="3" Grid.Column="0"/>
+        <Entry x:Name="passTxt"
+           Grid.Row="3" Grid.Column="1" 
+           FontSize="Medium" IsPassword="True"
+           Keyboard="Numeric"
+           MaxLength="4"/>
+        <Label Text="Confirm Pin"
+           FontSize="Medium"
+           Grid.Row="4" Grid.Column=" 0" />
+        <Entry x:Name="cnfrmPassTxt"
+           Grid.Row="4" Grid.Column="1" 
+           FontSize="Medium" IsPassword="True"
+           Keyboard="Numeric"
+           MaxLength="4"/>
+        <Label Text="Mail"
+           FontSize="Medium"
+           Grid.Row="5" Grid.Column=" 0" />
+        <Entry x:Name="mailTxt"
+           Grid.Row="5" Grid.Column="1" 
+           FontSize="Medium"
+           Keyboard="Email"/>
+        <Label Text="This is a Switch"
+           Grid.Row="6"
+           Grid.Column="0"
+           FontSize="Medium"
+        />
+        <Switch IsToggled="False"
+            Grid.Row="6"
+            Grid.Column="1"
+            OnColor="Black"
+            ThumbColor="SeaGreen"                
+            />
+        <Label Text="Radio"
+           Grid.Row="7"
+           Grid.Column="0"
+           FontSize="Medium"/>
+        <HorizontalStackLayout Grid.Row="7"
+                           Grid.Column="1">
+            <Label Text="True" FontSize="Medium"/>
+            <RadioButton GroupName="Radio"
+                     IsChecked="False"
+                     BorderColor="SeaGreen"
+                     />
+
+
+        </HorizontalStackLayout>
+        <Button 
+            x:Name="btnSignUp"
+            Grid.Row="8" 
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Text="Sign Up" Clicked="btnSignUp_Clicked"/>
+    </Grid>
+</ContentPage>

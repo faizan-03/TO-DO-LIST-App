@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AgainMaui.Pages.ViewTaskPage"
+             xmlns:vm="clr-namespace:AgainMaui.Classses"
+             x:DataType="vm:Tasks"
+             Title="ViewTaskPage">
+    <Grid RowDefinitions="auto,auto,auto,auto,auto" ColumnDefinitions="*">
+        <SearchBar x:Name="SearchTasksViewBar" 
+                SearchButtonPressed="SearchTasksViewBar_SearchButtonPressed"
+                Grid.Row="0" Grid.Column="0"/>
+        <!--<Button x:Name="btnBack" 
+             Text="Back" 
+             FontSize="Medium" 
+             TextColor="Black" 
+             Clicked="btnBack_Clicked"
+             Grid.Row="1" Grid.Column="0"/>-->
+        <!--<TableView Intent="Data" Grid.Row="1" Grid.Column="0">
+            <TableRoot>
+                <TableSection Title="All Tasks">
+                    <TextCell Text="Title" Detail="{Binding Title}"/>
+                    <TextCell Text="Due Date" Detail="{Binding DueDate}"/>
+                    <TextCell Text="Due Time" Detail="{Binding DueTime}"/>
+                    <TextCell Text="Creation Date" Detail="{Binding CreationDate}"/>
+                    <TextCell Text="Creation Time" Detail="{Binding CreationTime}"/>
+                    <SwitchCell Text="Priority" On="{Binding IsPrioritized}"/>
+                </TableSection>
+            </TableRoot>
+            
+        </TableView>-->
+        <ListView x:Name="TasksListView" Grid.Row="1" Grid.Column="0" HasUnevenRows="True"
+                  ItemTapped="TasksListView_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <HorizontalStackLayout Margin="10" Padding="5">
+                            <Image Source="Bullet.png" HeightRequest="10"/>
+                            <Label x:Name="labelTitle"
+                            Text="{Binding Title}"
+                            TextColor="Black" 
+                            HorizontalOptions="Start" 
+                            Margin="20" 
+                            Padding="5"
+                            FontSize="Medium"
+                            FontAttributes="Bold"/>
+                        </HorizontalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Entry x:Name="entEdit" Text="Title" Grid.Row="3"/>
+        <Button x:Name="btnEdit" Text="Edit" Grid.Row="4" Clicked="btnEdit_Clicked"/>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AgainMaui.Pages.EditTaskPage"
+             Title="EditTaskPage">
+    <ScrollView>
+        <Grid RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto" ColumnDefinitions="*,2*">
+
+            <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Text="Edit Task" 
+               FontSize="Title" 
+               HorizontalOptions="Center"
+               TextColor="Black"/>
+
+            </Frame>
+            <Label Text="Title" FontSize="Medium" Grid.Row="1" Grid.Column="0"/>
+            <Entry Placeholder="Enter title" x:Name="TitleEntry"
+               Keyboard="Text"  PlaceholderColor="Black"
+               Grid.Row="1" Grid.Column="1"/>
+            <Button Text="Update" x:Name="btnUpdate" Clicked="btnUpdate_Clicked"  Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"/>
+        </Grid>
+    </ScrollView>
+</ContentPage>
